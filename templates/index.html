@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+        textarea {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tweet Sentiment Prediction</h2>
+    <form action="/predict" method="post">
+        <textarea name="tweet" rows="5" placeholder="Enter tweet here..."></textarea><br><br>
+        <input type="submit" value="Analyze">
+    </form>
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+
+    <footer>
+        Created by Souridya Dey
+    </footer>
+</body>
+</html>
